@@ -335,11 +335,14 @@ namespace Grayjay.ClientServer.Settings
             public bool PluginUpdates { get; set; } = true;
         }
 
-        [SettingsField("Info", SettingsField.GROUP, "", 13)]
+        [SettingsField("Info", SettingsField.GROUP, "About this application", 13)]
         public InfoData Info { get; } = new InfoData();
 
         public class InfoData
         {
+            [SettingsField("Application", SettingsField.READONLY, "A multi-platform media application that allows you to watch content from multiple platforms in a single application", 0)]
+            public string applicationName { get; } = "Grayjay Desktop";
+
             [SettingsField("Version Code", SettingsField.READONLY, "", 1, "code")]
             public string versionCode { get; } = Constants.App.Version.ToString();
 
